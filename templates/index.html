@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web App</title>
+    <link href="../static/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="container">
+    <h1>Gecoding Service</h1>
+    <h3> Please upload a file with a column 'Address'</h3>
+    <div class="message">
+    </div>
+    <form action="{{url_for('success')}}" method="POST" enctype="multipart/form-data">
+        <input type="file" accept=".xls" name="file"> 
+        <button type="submit"> Submit </button>
+    </form>
+    <div class="output">
+        <h3>{{ text | safe }}</h3>
+        {% include btn ignore missing %}
+    </div>
+    </div>
+</body>
+</html>
